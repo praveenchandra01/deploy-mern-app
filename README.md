@@ -1,5 +1,4 @@
-# How to deploy apps for free
-
+# Deploy MERN apps for free
 Deploying single react applications and full-stack web applications using Heroku and Netlify/Github.
 
 # Deploying Full-Stack Apps
@@ -51,14 +50,11 @@ git push heroku master
 ---
 # Deploying a React App to GitHub Pages
 
-\* created using `create-react-app`
+> [reference deployment guide](https://github.com/gitname/react-gh-pages),
+> [official deployment guide](https://create-react-app.dev/docs/deployment/#github-pages)
 
 
 ### 1. Create an **empty** repository on GitHub
-
-1. Sign into your GitHub account.
-2. Visit the [Create a new repository](https://github.com/new) form.
-
 
 ### 2. Create a React app
 
@@ -72,8 +68,6 @@ git push heroku master
      ```shell
      $ npx create-react-app my-app --template typescript
      ```
-
-    That command will create a new folder named `my-app`, which will contain the source code of a React app.
     
 2. Enter the newly-created folder:
   
@@ -84,7 +78,6 @@ git push heroku master
 
 ### 3. Install the `gh-pages` npm package
 
-1. Install the [`gh-pages`](https://github.com/tschaub/gh-pages) npm package and designate it as a [development dependency](https://nodejs.dev/learn/npm-dependencies-and-devdependencies):
  
     ```shell
     $ npm install gh-pages --save-dev
@@ -94,7 +87,7 @@ git push heroku master
 ### 4. Add a `homepage` property to the `package.json` file
 
 
-1. Add a `homepage` property in this format\*: `https://{username}.github.io/{repo-name}`
+ Add a `homepage` property in this format\*: `https://{username}.github.io/{repo-name}`
 
     ```diff
     {
@@ -108,8 +101,6 @@ git push heroku master
 ### 5. Add deployment scripts to the `package.json` file
 
 
-1. Add a `predeploy` property and a `deploy` property\* to the `scripts` object:
-
     ```diff
     "scripts": {
     +   "predeploy": "npm run build",
@@ -121,9 +112,6 @@ git push heroku master
 
 ### 6. Add a "remote" that points to the GitHub repository
 
-1. Add a "[remote](https://git-scm.com/docs/git-remote)" to the local Git repository.
-
-
     
     ```shell
     $ git remote add origin https://github.com/{username}/{repo-name}.git
@@ -131,8 +119,6 @@ git push heroku master
 
 
 ### 7. Deploy the React app to GitHub Pages
-
-1. Deploy the React app to GitHub Pages
 
     ```shell
     $ npm run deploy
